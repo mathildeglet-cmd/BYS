@@ -18,9 +18,7 @@ CREATE TABLE program(
 id INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(100) NOT NULL,
 image VARCHAR(255) NOT NULL,
-description TEXT NOT NULL,
-user_id INT NOT NULL,
-FOREIGN KEY(user_id) REFERENCES user(id)
+description TEXT NOT NULL
 );
 
 CREATE TABLE user_program(
