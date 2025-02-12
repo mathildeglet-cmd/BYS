@@ -15,4 +15,6 @@ router.post("/api/items", itemActions.add);
 
 /* ************************************************************************* */
 
+import adminProgram from "./routes/adminProgram.routes";
+router.use("/admin/", adminProgram);
 export default router;

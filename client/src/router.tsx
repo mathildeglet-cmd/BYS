@@ -1,11 +1,17 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import AdminProgramCreationPage from "./pages/AdminProgramCreationPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{}],
+    children: [
+      {
+        path: "/adminCreationProgram",
+        element: <AdminProgramCreationPage />,
+      },
+    ],
   },
 ]);
 
