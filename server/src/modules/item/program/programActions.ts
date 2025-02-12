@@ -16,4 +16,12 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { add };
+const browse: RequestHandler = async (req, res, next) => {
+  try {
+    const programs = await programRepository.read();
+    res.json(programs);
+  } catch (error) {
+    next(error);
+  }
+};
+export default { add, browse };

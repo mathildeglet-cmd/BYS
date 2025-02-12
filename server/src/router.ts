@@ -17,4 +17,7 @@ router.post("/api/items", itemActions.add);
 
 import adminProgram from "./routes/adminProgram.routes";
 router.use("/admin/", adminProgram);
+
+import programs from "./routes/programs.routes";
+router.use("/programs", programs);
 export default router;
