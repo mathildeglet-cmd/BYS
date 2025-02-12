@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import { toast } from "react-toastify";
 import type { ProgramType } from "../lib/program.definition";
 
 export default function AdminProgramCreationPage() {
@@ -17,9 +18,10 @@ export default function AdminProgramCreationPage() {
         },
         body: JSON.stringify(data),
       });
-
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
+      if (response.ok) {
+        toast.success("Votre programme à bien été créé !");
+      } else {
+        toast.error("Erreur lors de l'envoi des données");
       }
     } catch (err) {
       console.error("Erreur:", err);
@@ -39,18 +41,10 @@ export default function AdminProgramCreationPage() {
           {...register("title", { required: true })}
         />
         {errors.title && <span className="text-red-500">champs requis</span>}
-        <label htmlFor="image">Image</label>
 
-        <input
-          type="file"
-          placeholder="png/jpg"
-          {...register("image", { required: true })}
-        />
-
-        {errors.image && <span className="text-red-500">champs requis</span>}
         <label htmlFor="description">Descripton</label>
         <input
-          placeholder="information sur le programme"
+          placeholder="Ce programme est destiné..."
           {...register("description", { required: true })}
         />
         {errors.description && (

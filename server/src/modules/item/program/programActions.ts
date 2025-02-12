@@ -5,7 +5,6 @@ const add: RequestHandler = async (req, res, next) => {
   try {
     const newProgram = {
       title: req.body.title,
-      image: req.body.image,
       description: req.body.description,
     };
 
