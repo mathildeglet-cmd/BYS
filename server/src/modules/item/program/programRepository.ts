@@ -15,6 +15,11 @@ class ProgramRepository {
     );
     return result.insertId;
   }
+
+  async read() {
+    const [row] = await databaseClient.query<Result>("SELECT * FROM program");
+    return row;
+  }
 }
 
 export default new ProgramRepository();
