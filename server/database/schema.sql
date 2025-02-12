@@ -17,7 +17,6 @@ CREATE TABLE user (
 CREATE TABLE program(
 id INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(100) NOT NULL,
-image VARCHAR(255) NOT NULL,
 description TEXT NOT NULL
 );
 
@@ -29,18 +28,4 @@ program_id INT NOT NULL,
 FOREIGN KEY(program_id) REFERENCES program(id)
 );
 
-CREATE TABLE exercise(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(100) NOT NULL,
-  sets INT NOT NULL,
-  repetition INT NOT NULL
-);
-
-CREATE TABLE program_exercise(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  program_id INT NOT NULL,
-  FOREIGN KEY(program_id) REFERENCES program(id),
-  exercise_id INT NOT NULL,
-  FOREIGN KEY (exercise_id) REFERENCES exercise(id)
-);
 
