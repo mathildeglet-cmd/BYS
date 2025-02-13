@@ -38,8 +38,8 @@ export default function LoginPage() {
 
   return (
     <>
-      <h1 className="font-bold text-darkgreen text-center mt-12 mb-8 lg:mt-20 lg:mb-20 lg:text-2xl">
-        CONNECTE TOI POUR PROFITER DE NOS PROGRAMMES!
+      <h1 className="font-bold text-darkgreen text-center mt-12 mb-8 lg:mt-20 lg:mb-20 lg:text-xl">
+        CONNECTE-TOI ET PROFITE DE TOUS NOS PROGRAMMES!
       </h1>
       <form
         className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md"
@@ -115,7 +115,20 @@ export default function LoginPage() {
             <span className="text-red-300">{errors.password.message}</span>
           )}
         </div>
-
+        <div className="lg:mb-8 mb-4">
+          <span>
+            Pas encore inscrit(e)? Crée ton{" "}
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/register");
+              }}
+              className="text-darkgreen font-bold hover:text-lg"
+            >
+              compte
+            </button>{" "}
+          </span>
+        </div>
         <button
           className="w-full bg-accent text-black text-sm font-bold py-2 px-4 rounded-md hover:bg-black hover:text-white transition duration-300"
           type="submit"
