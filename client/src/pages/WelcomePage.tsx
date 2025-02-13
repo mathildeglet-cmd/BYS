@@ -28,11 +28,7 @@ export default function WelcomePage() {
       <div className="lg:flex lg:flex-wrap lg:justify-center lg:gap-16">
         {programs?.map((p) => {
           return (
-            <button
-              type="button"
-              key={p.id}
-              onClick={() => navigate("/programDetail/:id")}
-            >
+            <button type="button" key={p.id} onClick={() => navigate("/login")}>
               <section>
                 <div className="lg:w-[30em] lg:h-[10em] mb-8">
                   <h2 className="bg-accent rounded-lg p-2 hover:bg-darkgreen hover:text-white lg:mb-2">
