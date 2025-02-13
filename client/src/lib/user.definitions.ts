@@ -5,3 +5,8 @@ export type UserFormType = {
   password: string;
   confirmPassword: string;
 };
+
+export type UserSignInType = {
+  email: string;
+  password: string;
+};

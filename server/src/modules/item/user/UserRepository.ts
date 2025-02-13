@@ -1,8 +1,9 @@
-import databaseClient from "../../../database/client";
+import databaseClient from "../../../../database/client";
 
-import type { Result, Rows } from "../../../database/client";
+import type { Result, Rows } from "../../../../database/client";
 
-type UserType = {
+export type UserType = {
+  id: number;
   firstname: string;
   lastname: string;
   email: string;
@@ -25,6 +26,14 @@ class UserRepository {
       [email],
     );
 
+    return rows[0] as UserType;
+  }
+
+  async readUserByEmail(email: string) {
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM user WHERE email=?",
+      [email],
+    );
     return rows[0] as UserType;
   }
 }

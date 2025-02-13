@@ -1,5 +1,5 @@
 import type { RequestHandler } from "express";
-import userRepository from "../modules/item/UserRepository";
+import userRepository from "../modules/item/user/UserRepository";
 
 export const isEmailAvailable: RequestHandler = async (req, res, next) => {
   try {
