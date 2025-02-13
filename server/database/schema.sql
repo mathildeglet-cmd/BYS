@@ -1,7 +1,3 @@
-CREATE TABLE role (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  label VARCHAR(100) NOT NULL
-);
 
 CREATE TABLE user (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -9,8 +5,7 @@ CREATE TABLE user (
   lastname VARCHAR(100) NOT NULL,
   email VARCHAR(100) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
-  role_id INT NOT NULL,
-  FOREIGN KEY (role_id) REFERENCES role(id)
+  role VARCHAR(100) NOT NULL DEFAULT 'client'
 );
 
 
@@ -27,5 +22,4 @@ FOREIGN KEY(user_id) REFERENCES user(id),
 program_id INT NOT NULL,
 FOREIGN KEY(program_id) REFERENCES program(id)
 );
-
 
