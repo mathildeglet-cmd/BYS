@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import AdminProgramCreationPage from "./pages/AdminProgramCreationPage";
+import RegisterPage from "./pages/RegisterPage";
 import WelcomePage from "./pages/WelcomePage";
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
           }
           return response.json();
         },
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
       },
     ],
   },
