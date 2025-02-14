@@ -9,6 +9,7 @@ export default function Header() {
   const handleIsOpenMenu = () => {
     setIsOpenMenu(!isOpenMenu);
   };
+
   return (
     <section className="flex flex-row justify-between mt-4 ml-4 mr-4 lg:flex">
       <nav>

@@ -1,21 +1,25 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
+
+CREATE TABLE user (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  firstname VARCHAR(100) NOT NULL,
+  lastname VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(100) NOT NULL DEFAULT 'client'
 );
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+
+CREATE TABLE program(
+id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(100) NOT NULL,
+description TEXT NOT NULL
 );
 
-insert into user(id, email, password)
-values
-  (1, "jdoe@mail.com", "123456");
+CREATE TABLE user_program(
+id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT NOT NULL,
+FOREIGN KEY(user_id) REFERENCES user(id),
+program_id INT NOT NULL,
+FOREIGN KEY(program_id) REFERENCES program(id)
+);
 
-insert into item(id, title, user_id)
-values
-  (1, "Stuff", 1),
-  (2, "Doodads", 1);
