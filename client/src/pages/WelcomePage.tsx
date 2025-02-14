@@ -8,7 +8,9 @@ export default function WelcomePage() {
 
   return (
     <section className="flex flex-col gap-8 m-8 lg:p-[5em] lg:mx-auto">
-      <h2 className="text-center font-bold text-darkgreen">A PROPOS DE BYS</h2>
+      <h2 className="text-center font-bold text-darkgreen">
+        <a href="about">A PROPOS DE BYS</a>
+      </h2>
       <p className="lg:w-1/2 lg:text-justify lg:self-center lg:text-lg">
         BYS (Build Your Strength) est une application dédiée aux pratiquants de
         musculation confirmés, conçue pour optimiser leur progression grâce à
@@ -21,8 +23,9 @@ export default function WelcomePage() {
         respectant l'équilibre entre intensité et récupération. Avec BYS,
         transformez votre passion en véritable succès athlétique.
       </p>
+
       <h2 className="text-center font-bold text-darkgreen lg:mt-8">
-        NOS PROGRAMMES
+        <a href="programs"> NOS PROGRAMMES</a>
       </h2>
 
       <div className="lg:flex lg:flex-wrap lg:justify-center lg:gap-16">
@@ -44,7 +47,7 @@ export default function WelcomePage() {
 
       <p className="lg:text-center lg:mt-12">
         Tu souhaites nous{" "}
-        <span className="font-bold text-darkgreen">CONTACTER</span> ? C'est par{" "}
+        <span className="font-bold text-darkgreen">contacter</span> ? C'est par{" "}
         <a
           className="text-center font-bold text-darkgreen"
           href="mailto:bys@gmail.com?subject=Sujet%20du%20mail&body=Contenu%20du%20message"
