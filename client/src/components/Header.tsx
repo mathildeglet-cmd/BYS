@@ -20,7 +20,7 @@ export default function Header() {
           <section className="flex flex-col gap-2 mt-4 lg:w-[10em] fixed bg-accent rounded-md p-2">
             <a href="about">A propos</a>
             <a href="programs">Nos programmes</a>
-            <a href="contact_us">Notre boutique</a>
+            <a href="shop">Notre boutique</a>
           </section>
         )}
       </nav>
